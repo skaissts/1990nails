@@ -24,13 +24,13 @@ const Booking = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
           {/* WhatsApp Button */}
           <a
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white/5 border-2 border-white/10 hover:border-gold-500 rounded-sm p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/10 transform hover:scale-105"
+            className="w-full md:w-[calc(50%-0.75rem)] max-w-md group bg-white/5 border-2 border-white/10 hover:border-gold-500 rounded-sm p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/10 transform hover:scale-105"
           >
             <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gold-500/20 rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-gold-500/30 transition-colors">
               <svg
@@ -52,7 +52,7 @@ const Booking = () => {
           {/* Phone Button */}
           <a
             href={`tel:${phoneNumber.replace(/\s/g, '')}`}
-            className="group bg-white/5 border-2 border-white/10 hover:border-gold-500 rounded-sm p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/10 transform hover:scale-105"
+            className="w-full md:w-[calc(50%-0.75rem)] max-w-md group bg-white/5 border-2 border-white/10 hover:border-gold-500 rounded-sm p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/10 transform hover:scale-105"
           >
             <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gold-500/20 rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-gold-500/30 transition-colors">
               <svg

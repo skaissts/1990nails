@@ -37,11 +37,11 @@ const Reviews = () => {
           <div className="w-24 h-1 bg-gold-500 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="flex flex-wrap gap-6 sm:gap-8 justify-center">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-white/5 border border-white/10 rounded-sm p-6 sm:p-8 hover:border-gold-500/50 transition-all duration-300"
+              className="w-full md:w-[calc(33.333%-1.33rem)] max-w-md bg-white/5 border border-white/10 rounded-sm p-6 sm:p-8 hover:border-gold-500/50 transition-all duration-300"
             >
               <div className="flex mb-4">
                 {[...Array(review.rating)].map((_, i) => (

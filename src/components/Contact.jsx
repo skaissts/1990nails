@@ -21,13 +21,13 @@ const Contact = () => {
           <div className="w-24 h-1 bg-gold-500 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
           {/* WhatsApp */}
           <a
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
+            className="w-full sm:w-[calc(33.333%-0.89rem)] max-w-md bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
           >
             <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gold-500/30 transition-colors">
               <svg
@@ -45,7 +45,7 @@ const Contact = () => {
           {/* Phone */}
           <a
             href={`tel:${phoneNumber.replace(/\s/g, '')}`}
-            className="bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
+            className="w-full sm:w-[calc(33.333%-0.89rem)] max-w-md bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
           >
             <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gold-500/30 transition-colors">
               <svg
@@ -66,10 +66,10 @@ const Contact = () => {
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/1990nails.at/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
+            className="w-full sm:w-[calc(33.333%-0.89rem)] max-w-md bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 hover:bg-white/10 transition-all duration-300 text-center group"
           >
             <div className="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gold-500/30 transition-colors">
               <svg

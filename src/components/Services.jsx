@@ -49,11 +49,13 @@ const Services = () => {
           {serviceCategories.map((category, categoryIndex) => {
             const servicesCount = category.services.length
             const isNailsCategory = category.categoryKey === 'nails'
-            const isSingleItem = servicesCount === 1
             
-            let gridCols = 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
-            if (isSingleItem) {
-              gridCols = 'grid-cols-1 max-w-md mx-auto'
+            // Определяем количество колонок в зависимости от количества элементов
+            let gridCols = 'grid-cols-1'
+            if (servicesCount === 2) {
+              gridCols = 'grid-cols-1 sm:grid-cols-2'
+            } else if (servicesCount >= 3) {
+              gridCols = 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }
             
             return (
@@ -61,37 +63,25 @@ const Services = () => {
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-gold-400 mb-6 text-center leading-tight pb-2 overflow-visible">
                   {t.services.category[category.categoryKey]}
                 </h3>
-                <div className={`grid ${gridCols} gap-4 sm:gap-6`}>
+                <div className={`flex flex-wrap gap-4 sm:gap-6 justify-center`}>
                   {category.services.map((service, serviceIndex) => {
                     // Для категории nails, если это последний элемент (Nail Art), центрируем его
                     const isLastInNails = isNailsCategory && serviceIndex === servicesCount - 1 && servicesCount === 5
                     
-                    if (isLastInNails) {
-                      // Обертка для центрирования последнего элемента, сохраняя размер одного блока
-                      return (
-                        <div
-                          key={serviceIndex}
-                          className="md:col-span-2 md:flex md:justify-center lg:col-span-1 lg:col-start-2"
-                        >
-                          <div className="w-full md:max-w-md bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 transition-all duration-300 hover:bg-white/10">
-                            <h4 className="text-base sm:text-lg font-semibold text-white mb-3">
-                              {t.services.items[service.key]}
-                            </h4>
-                            <div className="flex justify-between items-center text-sm text-white/70">
-                              <span>{service.duration}</span>
-                              <span className="text-gold-400 font-semibold text-lg">
-                                {service.price}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      )
+                    // Определяем ширину элемента в зависимости от количества элементов
+                    let itemWidth = 'w-full'
+                    if (servicesCount === 1) {
+                      itemWidth = 'w-full max-w-md'
+                    } else if (servicesCount === 2) {
+                      itemWidth = 'w-full sm:w-[calc(50%-0.75rem)] max-w-md'
+                    } else if (servicesCount >= 3) {
+                      itemWidth = 'w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] max-w-md'
                     }
                     
                     return (
                       <div
                         key={serviceIndex}
-                        className="bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 transition-all duration-300 hover:bg-white/10"
+                        className={`${itemWidth} bg-white/5 border border-white/10 rounded-sm p-5 sm:p-6 hover:border-gold-500/50 transition-all duration-300 hover:bg-white/10`}
                       >
                         <h4 className="text-base sm:text-lg font-semibold text-white mb-3">
                           {t.services.items[service.key]}

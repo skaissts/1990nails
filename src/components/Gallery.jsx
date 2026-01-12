@@ -80,12 +80,12 @@ const Gallery = () => {
             <div className="w-24 h-1 bg-gold-500 mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {galleryImages.map((image) => (
               <div
                 key={image.id}
                 onClick={() => openModal(image)}
-                className="aspect-square overflow-hidden rounded-sm bg-white/5 border border-white/10 hover:border-gold-500/50 transition-all duration-300 group cursor-pointer relative"
+                className="w-[calc(50%-0.25rem)] sm:w-[calc(33.333%-0.67rem)] aspect-square overflow-hidden rounded-sm bg-white/5 border border-white/10 hover:border-gold-500/50 transition-all duration-300 group cursor-pointer relative max-w-md"
               >
                 <img
                   src={image.url}
@@ -116,7 +116,7 @@ const Gallery = () => {
 
           <div className="text-center mt-10 sm:mt-12">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/1990nails.at/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 transition-colors duration-200 font-medium"
